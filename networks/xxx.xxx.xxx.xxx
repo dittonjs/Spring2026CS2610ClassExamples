@@ -1,0 +1,43 @@
+xxx.xxx.xxx.xxx
+
+192.168.1.1
+
+255.255.255.0
+11111111.11111111.11111111.00000000
+
+192.168.1.
+192.168.1.x
+
+255.255.0.0
+
+
+// start line
+<verb|method> <uri> <http version>
+POST / HTTP/1.1
+
+// headers
+name: content
+Cookie: token=asdfqweoriuqpwoeiur
+
+// mandatory blank line
+
+// body
+
+// full example
+GET /users/1 HTTP/1.1
+Cookie: asdf=asdflkjasdflkj
+Connection: keep-alive
+Accept: text/html\r\n
+
+// response
+
+<http version> <code> <reason>
+HTTP/1.1 200 OK
+headers
+
+<html><div>Hello,..
+
+
+
+
+
