@@ -1,5 +1,5 @@
 import { Response } from "./response.js";
-import { index, about } from "./endpoints.js";
+import { index, about, profile } from "./endpoints.js";
 
 export function router(request) {
   if (request.uri === "/") {
@@ -8,6 +8,8 @@ export function router(request) {
   } else if (request.uri === "/about") {
     // call the about endpoint
     return about(request);
+  } else if (request.uri === "/profile") {
+    return profile(request);
   } else {
     return new Response(
       404,

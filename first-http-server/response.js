@@ -15,7 +15,7 @@ export class Response {
       `Content-Type: text/html
 Server: Joseph's server
 Content-Length: ${this.body.length}
-Connection: close`;
+Connection: keep-alive`;
     return `${startLine}\r\n${headers}\r\n\r\n${this.body}`;
   }
 }

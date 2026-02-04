@@ -1,17 +1,22 @@
 import net from 'net';
 import { router } from "./router.js";
 import { Request } from "./request.js";
+import { loggingMiddlewareFactory, authenticationMiddlewareFactory } from './middleware.js';
+
 const server = net.createServer((socket) => {
+  console.log("A connection was made")
   socket.on('data', (data) => {
-    console.log('HTTP Request', data.toString("utf-8"));
     const request = new Request(data.toString("utf-8"));
-    const response = router(request);
+
+    let routerWithMiddleware = authenticationMiddlewareFactory(router);
+    routerWithMiddleware = loggingMiddlewareFactory(routerWithMiddleware)
+    const response = routerWithMiddleware(request);
     socket.write(response.toString());
   });
 
-  socket.on('end', () => {
-    console.log('Client disconnected');
-  });
+  socket.on("end", () => {
+    console.log("connection ended");
+  })
 });
 
 
