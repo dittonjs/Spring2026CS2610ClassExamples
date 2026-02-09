@@ -5,12 +5,12 @@ import { loggingMiddlewareFactory, authenticationMiddlewareFactory } from './mid
 
 const server = net.createServer((socket) => {
   console.log("A connection was made")
-  socket.on('data', (data) => {
+  socket.on('data', async (data) => {
     const request = new Request(data.toString("utf-8"));
 
     let routerWithMiddleware = authenticationMiddlewareFactory(router);
     routerWithMiddleware = loggingMiddlewareFactory(routerWithMiddleware)
-    const response = routerWithMiddleware(request);
+    const response = await routerWithMiddleware(request);
     socket.write(response.toString());
   });
 
