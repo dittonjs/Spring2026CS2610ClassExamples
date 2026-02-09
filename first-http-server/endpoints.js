@@ -2,6 +2,7 @@ import { Response } from "./response.js";
 import { Client } from "pg";
 import { readFileSync } from "fs";
 
+
 export async function index(request) {
   return new Response(
     200,
@@ -30,11 +31,11 @@ export async function handlePost(request) {
 export async function movies(request) {
   const client = new Client(
     {
-      host: "localhost",
-      port: 5432,
-      user: "firsthttp",
-      password: "asdfasdf",
-      database: "firsthttp"
+      host: process.env.DB_HOST,
+      port: parseInt(process.env.DB_PORT),
+      user: process.env.DB_USER,
+      password: process.env.DB_PASSWORD,
+      database: process.env.DB_NAME
     }
   );
   try {

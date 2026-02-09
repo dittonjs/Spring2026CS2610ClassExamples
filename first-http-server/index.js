@@ -2,6 +2,8 @@ import net from 'net';
 import { router } from "./router.js";
 import { Request } from "./request.js";
 import { loggingMiddlewareFactory, authenticationMiddlewareFactory } from './middleware.js';
+import dotenv from "dotenv";
+dotenv.config();
 
 const server = net.createServer((socket) => {
   console.log("A connection was made")
