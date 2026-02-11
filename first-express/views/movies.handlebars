@@ -1,0 +1,12 @@
+<div>
+  {{#if isAdmin}}
+  <p>You are an admin</p>
+  {{else}}
+  <p>You are not and admin!</p>
+  {{/if}}
+  <ul>
+    {{#each movies}}
+    <li>{{title}}</li>
+    {{/each}}
+  </ul>
+</div>
