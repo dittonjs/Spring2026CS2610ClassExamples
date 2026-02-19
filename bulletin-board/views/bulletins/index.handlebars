@@ -1,0 +1,12 @@
+<div class="bulletin">
+  <h1>Welcome to the Bulletin Board</h1>
+  <a class="create-button" href="/bulletins/new">+ Create a Bulletin</a>
+  <div class="bulletin-list">
+    {{#each bulletins}}
+    <div class="bulletin-item">
+      <h2><a href="/bulletins/{{id}}">{{title}}</a></h2>
+      <p>{{content}}</p>
+    </div>
+    {{/each}}
+  </div>
+</div>

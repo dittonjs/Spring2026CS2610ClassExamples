@@ -1,0 +1,233 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 20px;
+  color: #333;
+}
+
+/* Container Styles */
+.bulletin {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.bulletin h1 {
+  color: #667eea;
+  margin-bottom: 30px;
+  font-size: 2.5em;
+  text-align: center;
+}
+
+/* Button Styles */
+.create-button,
+.edit-button,
+.submit-button,
+.delete-button {
+  display: inline-block;
+  padding: 12px 24px;
+  margin: 10px 5px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.create-button:hover,
+.edit-button:hover,
+.submit-button:hover,
+.delete-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+/* Bulletin List Styles */
+.bulletin-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.bulletin-item {
+  background: #f8f9fa;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 20px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.bulletin-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.2);
+  border-color: #667eea;
+}
+
+.bulletin-item h2 {
+  margin-bottom: 10px;
+  color: #667eea;
+  font-size: 1.5em;
+}
+
+.bulletin-item h2 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.bulletin-item h2 a:hover {
+  text-decoration: underline;
+}
+
+.bulletin-item p {
+  color: #666;
+  line-height: 1.6;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+/* Form Styles */
+.bulletin-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.bulletin-form h1 {
+  color: #667eea;
+  margin-bottom: 30px;
+  font-size: 2em;
+  text-align: center;
+}
+
+.bulletin-form div {
+  margin-bottom: 20px;
+}
+
+.bulletin-form label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: 600;
+  font-size: 1.05em;
+}
+
+.bulletin-form input[type="text"],
+.bulletin-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1em;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.bulletin-form input[type="text"]:focus,
+.bulletin-form textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.bulletin-form textarea {
+  min-height: 200px;
+  resize: vertical;
+}
+
+/* Bulletin Detail Styles */
+.bulletin-detail {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.bulletin-detail h1 {
+  color: #667eea;
+  margin-bottom: 20px;
+  font-size: 2.5em;
+  line-height: 1.2;
+}
+
+.bulletin-detail p {
+  color: #666;
+  font-size: 1.1em;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  white-space: pre-wrap;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+
+  .bulletin,
+  .bulletin-form,
+  .bulletin-detail {
+    padding: 20px;
+  }
+
+  .bulletin h1,
+  .bulletin-form h1,
+  .bulletin-detail h1 {
+    font-size: 1.8em;
+  }
+
+  .bulletin-list {
+    grid-template-columns: 1fr;
+  }
+
+  .create-button,
+  .edit-button,
+  .submit-button {
+    padding: 10px 20px;
+    font-size: 0.95em;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .bulletin,
+  .bulletin-form,
+  .bulletin-detail {
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  .bulletin h1,
+  .bulletin-form h1,
+  .bulletin-detail h1 {
+    font-size: 1.5em;
+  }
+
+  .bulletin-item h2 {
+    font-size: 1.2em;
+  }
+}
